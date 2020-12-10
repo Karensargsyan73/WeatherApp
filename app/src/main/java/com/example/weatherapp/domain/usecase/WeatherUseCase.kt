@@ -1,8 +1,10 @@
 package com.example.weatherapp.domain.usecase
 
+import android.content.SharedPreferences
 import com.example.weatherapp.data.repository.WeatherRepository
 import com.example.weatherapp.domain.model.WeatherModel
 import io.reactivex.rxjava3.core.Single
+import java.lang.ref.SoftReference
 import javax.inject.Inject
 
 class WeatherUseCase @Inject constructor(
@@ -11,5 +13,9 @@ class WeatherUseCase @Inject constructor(
 
     fun getWeatherInformation(city: String): Single<WeatherModel> {
         return repository.getWeatherInformation(city)
+    }
+
+    fun isHavingCity(): Boolean {
+        return repository.isHaveCity()
     }
 }

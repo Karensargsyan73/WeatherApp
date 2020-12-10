@@ -14,4 +14,5 @@ object Screens {
     fun dayWeather(): AppScreen {
         return FragmentScreen("DayWeather") { DayWeatherFragment() }
     }
+
 }

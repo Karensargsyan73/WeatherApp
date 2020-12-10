@@ -13,8 +13,6 @@ interface Api {
     fun getWeatherInformation(
         @Query("q") city: String,
         @Query("appid") apiKey: String,
-//        @Query("lang") lang: String,
-//        @Query("units") units: String
     ): Single<WeatherEntity>
 
     @GET("data/2.5/weather?q={city}&appid={apiKey}&lang=ru")

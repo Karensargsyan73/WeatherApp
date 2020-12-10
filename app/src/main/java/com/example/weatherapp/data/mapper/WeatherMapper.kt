@@ -14,7 +14,8 @@ object WeatherMapper {
             description = weather.description,
             icon = weather.icon,
             temp = weatherEntity.mainEntity.temp,
-            humidity = weatherEntity.mainEntity.humidity
+            humidity = weatherEntity.mainEntity.humidity,
+            cityName = weatherEntity.cityNameEntity
         )
     }
 }
