@@ -1,4 +1,4 @@
-package com.example.weatherapp.presentation.chooseCity
+package com.example.weatherapp.presentation.choosecity
 
 import android.os.Bundle
 import android.view.View

@@ -1,6 +1,6 @@
 package com.example.weatherapp.navigation
 
-import com.example.weatherapp.presentation.chooseCity.ChooseCityFragment
+import com.example.weatherapp.presentation.choosecity.ChooseCityFragment
 import com.github.terrakok.cicerone.androidx.AppScreen
 import com.github.terrakok.cicerone.androidx.FragmentScreen
 
