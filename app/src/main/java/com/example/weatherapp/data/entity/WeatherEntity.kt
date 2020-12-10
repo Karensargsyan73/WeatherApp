@@ -25,6 +25,6 @@ class WeatherMainEntity(
 )
 
 class MainEntity(
-    val temp: Int,
+    val temp: Double,
     val humidity: Int
 )

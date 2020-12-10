@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.weatherapp.R
 import com.example.weatherapp.databinding.ChooseCityLayoutBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ChooseCityFragment : Fragment(R.layout.choose_city_layout) {
     private val chooseCityViewModel: ChooseCityViewModel by viewModels()
     private lateinit var binding: ChooseCityLayoutBinding
@@ -15,5 +17,8 @@ class ChooseCityFragment : Fragment(R.layout.choose_city_layout) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = DataBindingUtil.bind(view)!!
+        binding.chooseCityBtnId.setOnClickListener {
+            chooseCityViewModel.onSearchClick(binding.editTextId.text.toString())
+        }
     }
 }

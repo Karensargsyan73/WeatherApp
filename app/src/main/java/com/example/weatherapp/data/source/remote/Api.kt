@@ -6,17 +6,20 @@ import io.reactivex.rxjava3.core.Single
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface Api {
-    @GET("data/2.5/weather?q={city}&appid={apiKey}&lang=ru&units=metric")
+    @GET("data/2.5/weather?lang=ru&units=metric")
     fun getWeatherInformation(
-        @Path("city") city: String,
-        @Path("apiKey") apiKey: String
+        @Query("q") city: String,
+        @Query("appid") apiKey: String,
+//        @Query("lang") lang: String,
+//        @Query("units") units: String
     ): Single<WeatherEntity>
 
     @GET("data/2.5/weather?q={city}&appid={apiKey}&lang=ru")
     fun getWeekWeatherInformation(
-        @Path("city") city: String,
-        @Path("apiKey") apiKey: String
+        @Query("city") city: String,
+        @Query("apiKey") apiKey: String
     ): Single<WeekWeatherEntity>
 }

@@ -8,6 +8,6 @@ class WeatherModel(
     val main: String,
     val description: String,
     val icon: String,
-    val temp: Int,
+    val temp: Double,
     val humidity: Int
 ) : Serializable
