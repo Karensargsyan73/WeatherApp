@@ -45,6 +45,8 @@ class DayPagerFragment : Fragment(R.layout.fragment_day_pager) {
             Picasso.get()
                 .load(String.format(BuildConfig.ICON_URL, weather.icon))
                 .into(binding.iconId)
+
+            binding.weeksTemp.setOnClickListener { viewModel.onWeeksTempClick(weather) }
         }
     }
 }

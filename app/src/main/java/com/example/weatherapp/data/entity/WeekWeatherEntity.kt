@@ -3,10 +3,8 @@ package com.example.weatherapp.data.entity
 import com.google.gson.annotations.SerializedName
 
 class WeekWeatherEntity(
-    @SerializedName("timezone")
-    val cityName: String,
     @SerializedName("daily")
-    val dailyWeather: DailyWeather,
+    val dailyWeather: List<DailyWeather>
 )
 
 class DailyWeather(
@@ -14,16 +12,19 @@ class DailyWeather(
     val temperature: Temperature,
     @SerializedName("wind_speed")
     val windSpeed: String,
+    @SerializedName("weather")
     val weekWeatherMainEntity: List<WeekWeatherMainEntity>
 )
 
 class Temperature(
-    val day: String,
-    val night: String,
+    @SerializedName("day")
+    val day: Double,
+    @SerializedName("night")
+    val night: Double,
     @SerializedName("eve")
-    val evening: String,
+    val evening: Double,
     @SerializedName("morn")
-    val morning: String
+    val morning: Double
 )
 
 class WeekWeatherMainEntity(

@@ -49,4 +49,8 @@ class DayWeatherViewModel @ViewModelInject constructor(
     fun onAddCityClick() {
         router.navigateTo(Screens.chooseCity())
     }
+
+    fun onWeeksTempClick(weather: WeatherModel) {
+        router.navigateTo(Screens.weekWeather(weather))
+    }
 }

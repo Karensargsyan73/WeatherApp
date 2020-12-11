@@ -6,4 +6,6 @@
     <string name="temp_even">Температура вечером :</string>
     <string name="temp_ning">Температура ночью :</string>
     <string name="weeks_temp">Погода на неделю</string>
+    <string name="today">Сегодня</string>
+    <string name="tomorow">Завтра</string>
 </resources>

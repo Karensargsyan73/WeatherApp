@@ -8,11 +8,12 @@ import com.example.weatherapp.data.mapper.WeekWeatherMapper
 import com.example.weatherapp.domain.model.WeatherModel
 import com.example.weatherapp.domain.model.WeekWeatherModel
 import io.reactivex.rxjava3.core.Single
+import retrofit2.http.Query
 import javax.inject.Inject
 
 class WeatherRepository @Inject constructor(
     private val api: Api,
-    var preferences: SharedPreferences
+    private val preferences: SharedPreferences
 ) {
     private companion object {
         const val CITIES_KEY = "cities"
@@ -33,8 +34,8 @@ class WeatherRepository @Inject constructor(
             .map { WeatherMapper.toDomain(it) }
     }
 
-    fun getWeekWeatherInformation(city: String): Single<WeekWeatherModel> {
-        return api.getWeekWeatherInformation(city, BuildConfig.API_KEY)
+    fun getWeekWeatherInformation(lat: Double, lon: Double): Single<List<WeekWeatherModel>> {
+        return api.getWeekWeatherInformation(lat, lon, BuildConfig.API_KEY)
             .map { WeekWeatherMapper.toDomain(it) }
     }
 

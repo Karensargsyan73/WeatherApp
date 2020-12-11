@@ -15,9 +15,10 @@ interface Api {
         @Query("appid") apiKey: String,
     ): Single<WeatherEntity>
 
-    @GET("data/2.5/weather?&lang=ru&units=metric")
+    @GET("data/2.5/onecall?exclude={current,minutely,hourly,alerts}&lang=ru&units=metric")
     fun getWeekWeatherInformation(
-        @Query("q") city: String,
+        @Query("lat") lat: Double,
+        @Query("lon") lon: Double,
         @Query("appid") apiKey: String
     ): Single<WeekWeatherEntity>
 }

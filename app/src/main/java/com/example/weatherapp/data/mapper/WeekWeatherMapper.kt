@@ -5,18 +5,20 @@ import com.example.weatherapp.domain.model.WeekWeatherModel
 
 object WeekWeatherMapper {
 
-    fun toDomain(weekWeatherEntity: WeekWeatherEntity): WeekWeatherModel {
-        val weekWeatherMainEntity = weekWeatherEntity.dailyWeather.weekWeatherMainEntity.first()
-        return WeekWeatherModel(
-            cityName = weekWeatherEntity.cityName,
-            windSpeed = weekWeatherEntity.dailyWeather.windSpeed,
-            dayTemp = weekWeatherEntity.dailyWeather.temperature.day,
-            nightTemp = weekWeatherEntity.dailyWeather.temperature.night,
-            eveningTemp = weekWeatherEntity.dailyWeather.temperature.evening,
-            morningTemp = weekWeatherEntity.dailyWeather.temperature.morning,
-            main = weekWeatherMainEntity.main,
-            icon = weekWeatherMainEntity.icon,
-            description = weekWeatherMainEntity.icon
-        )
+    fun toDomain(weekWeatherEntity: WeekWeatherEntity): List<WeekWeatherModel> {
+        return weekWeatherEntity.dailyWeather.map { weekWeather ->
+            val weekWeatherMain = weekWeather.weekWeatherMainEntity.first()
+
+            WeekWeatherModel(
+                windSpeed = weekWeather.windSpeed,
+                dayTemp = weekWeather.temperature.day.toInt().toString(),
+                nightTemp = weekWeather.temperature.night.toInt().toString(),
+                eveningTemp = weekWeather.temperature.evening.toInt().toString(),
+                morningTemp = weekWeather.temperature.morning.toInt().toString(),
+                main = weekWeatherMain.main,
+                icon = weekWeatherMain.icon,
+                description = weekWeatherMain.description
+            )
+        }
     }
 }

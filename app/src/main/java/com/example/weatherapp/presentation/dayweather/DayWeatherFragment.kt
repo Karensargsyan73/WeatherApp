@@ -36,16 +36,16 @@ class DayWeatherFragment : Fragment(R.layout.fragment_day_weather) {
             tabLayoutMediator.attach()
         }
     }
-}
 
-class PagerAdapter(
-    private val cities: List<String>,
-    fragment: Fragment
-) : FragmentStateAdapter(fragment) {
+    class PagerAdapter(
+        private val cities: List<String>,
+        fragment: Fragment
+    ) : FragmentStateAdapter(fragment) {
 
-    override fun getItemCount(): Int = cities.size
+        override fun getItemCount(): Int = cities.size
 
-    override fun createFragment(position: Int): Fragment {
-        return DayPagerFragment.newInstance(cities[position])
+        override fun createFragment(position: Int): Fragment {
+            return DayPagerFragment.newInstance(cities[position])
+        }
     }
 }
