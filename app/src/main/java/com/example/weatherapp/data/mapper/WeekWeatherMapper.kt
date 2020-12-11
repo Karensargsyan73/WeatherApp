@@ -9,7 +9,6 @@ object WeekWeatherMapper {
         val weekWeatherMainEntity = weekWeatherEntity.dailyWeather.weekWeatherMainEntity.first()
         return WeekWeatherModel(
             cityName = weekWeatherEntity.cityName,
-            humidity = weekWeatherEntity.dailyWeather.humidity,
             windSpeed = weekWeatherEntity.dailyWeather.windSpeed,
             dayTemp = weekWeatherEntity.dailyWeather.temperature.day,
             nightTemp = weekWeatherEntity.dailyWeather.temperature.night,

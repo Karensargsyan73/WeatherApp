@@ -12,7 +12,6 @@ class WeekWeatherEntity(
 class DailyWeather(
     @SerializedName("temp")
     val temperature: Temperature,
-    val humidity: String,
     @SerializedName("wind_speed")
     val windSpeed: String,
     val weekWeatherMainEntity: List<WeekWeatherMainEntity>

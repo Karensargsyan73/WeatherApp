@@ -15,12 +15,12 @@ class ChooseCityViewModel @ViewModelInject constructor(
 ) : ViewModel() {
 
     fun onSearchClick(city: String) {
-        useCase.getWeatherInformation(city)
+        useCase.getFirstWeatherInformation(city)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                { weatherModel ->
-                   router.navigateTo(Screens.dayWeather())
+                {
+                   router.newRootScreen(Screens.dayWeather())
                 },
                 { th ->
                     th.printStackTrace()

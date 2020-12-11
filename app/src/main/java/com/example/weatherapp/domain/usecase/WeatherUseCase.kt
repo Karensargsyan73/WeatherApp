@@ -11,11 +11,19 @@ class WeatherUseCase @Inject constructor(
     private val repository: WeatherRepository
 ) {
 
+    fun getFirstWeatherInformation(city: String): Single<WeatherModel> {
+        return repository.getFirstWeatherInformation(city)
+    }
+
     fun getWeatherInformation(city: String): Single<WeatherModel> {
         return repository.getWeatherInformation(city)
     }
 
     fun isHavingCity(): Boolean {
         return repository.isHaveCity()
+    }
+
+    fun getCities(): String {
+        return repository.getCities()
     }
 }

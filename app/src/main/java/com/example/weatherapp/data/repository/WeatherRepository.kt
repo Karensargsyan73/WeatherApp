@@ -18,10 +18,19 @@ class WeatherRepository @Inject constructor(
         const val CITIES_KEY = "cities"
     }
 
+    fun getFirstWeatherInformation(city: String): Single<WeatherModel> {
+        return api.getWeatherInformation(city, BuildConfig.API_KEY)
+            .map { WeatherMapper.toDomain(it) }
+            .doAfterSuccess {
+                var cities = preferences.getString(CITIES_KEY, "") ?: ""
+                cities += "," + it.cityName
+                preferences.edit().putString(CITIES_KEY, cities).apply()
+            }
+    }
+
     fun getWeatherInformation(city: String): Single<WeatherModel> {
         return api.getWeatherInformation(city, BuildConfig.API_KEY)
             .map { WeatherMapper.toDomain(it) }
-            .doAfterSuccess { preferences.edit().putString(CITIES_KEY, it.cityName).apply() }
     }
 
     fun getWeekWeatherInformation(city: String): Single<WeekWeatherModel> {
@@ -31,5 +40,9 @@ class WeatherRepository @Inject constructor(
 
     fun isHaveCity(): Boolean {
         return preferences.getString(CITIES_KEY, null) != null
+    }
+
+    fun getCities(): String {
+        return preferences.getString(CITIES_KEY, null) ?: ""
     }
 }

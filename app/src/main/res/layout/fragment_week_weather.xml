@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data></data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/icon_weather_id"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="36dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/main_week_weather_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="36sp"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/icon_weather_id" />
+
+        <TextView
+            android:id="@+id/description_week_weather_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="26sp"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/main_week_weather_id" />
+
+        <TextView
+            android:id="@+id/temp_morn_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="26sp"
+            android:text="@string/temp_morn"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/description_week_weather_id" />
+
+        <TextView
+            android:id="@+id/temp_morn_value_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="26sp"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/temp_morn_id"
+            app:layout_constraintTop_toBottomOf="@id/description_week_weather_id" />
+
+        <TextView
+            android:id="@+id/temp_day_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="26sp"
+            android:text="@string/temp_day"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/temp_morn_id" />
+
+        <TextView
+            android:id="@+id/temp_day_value_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="26sp"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/temp_day_id"
+            app:layout_constraintTop_toBottomOf="@id/temp_morn_id" />
+
+        <TextView
+            android:id="@+id/temp_evening_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="26sp"
+            android:text="@string/temp_even"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/temp_day_id" />
+
+        <TextView
+            android:id="@+id/temp_evening_value_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="26sp"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/temp_evening_id"
+            app:layout_constraintTop_toBottomOf="@id/temp_day_id" />
+
+        <TextView
+            android:id="@+id/temp_night_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="26sp"
+            android:text="@string/temp_ning"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/temp_evening_id" />
+
+        <TextView
+            android:id="@+id/temp_night_value_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10sp"
+            android:layout_marginTop="26sp"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/temp_night_id"
+            app:layout_constraintTop_toBottomOf="@id/temp_evening_id" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

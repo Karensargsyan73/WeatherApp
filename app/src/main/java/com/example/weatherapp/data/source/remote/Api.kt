@@ -15,9 +15,9 @@ interface Api {
         @Query("appid") apiKey: String,
     ): Single<WeatherEntity>
 
-    @GET("data/2.5/weather?q={city}&appid={apiKey}&lang=ru")
+    @GET("data/2.5/weather?&lang=ru&units=metric")
     fun getWeekWeatherInformation(
-        @Query("city") city: String,
-        @Query("apiKey") apiKey: String
+        @Query("q") city: String,
+        @Query("appid") apiKey: String
     ): Single<WeekWeatherEntity>
 }
